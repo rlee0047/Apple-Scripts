@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>set myRepo to display dialog "What is the repo address ?" default answer ""set myRepo to text returned of myReposet gitRepo to ".git" as stringset gitComd to "git remote set-url origin"set webRepo to gitComd &amp; " " &amp; myRepo &amp; gitRepodisplay dialog webReposet the clipboard to webRepotell application "Terminal"	activate	tell application "System Events"		keystroke "l" using control down		keystroke "v" using command down		keystroke (key code 36)	end tell		tell application "Terminal"		tell front window			set the clipboard to contents of selected tab as text		end tell		set tString to the clipboard as text	end tell		set errorSwitch to false	set tNames to "fatal: remote origin already exists."	repeat with aName in paragraphs of tNames		if aName is in tString then set errorSwitch to true	end repeat		if errorSwitch is true then		display dialog "Origin already set"		quit application "Terminal"	else		display dialog "Your repo has been set"		quit application "Terminal"	end if	end tell</string>
+					<string>set myRepo to display dialog "What is the repo address ?" default answer ""set myRepo to text returned of myReposet gitRepo to ".git" as stringset gitComd to "git remote origin"set webRepo to gitComd &amp; " " &amp; myRepo &amp; gitRepodisplay dialog webReposet the clipboard to webRepotell application "Terminal"	activate	tell application "System Events"		keystroke "l" using control down		keystroke "v" using command down		keystroke (key code 36)	end tell		tell application "Terminal"		tell front window			set the clipboard to contents of selected tab as text		end tell		set tString to the clipboard as text	end tell		set errorSwitch to false	set tNames to "fatal: remote origin already exists."	repeat with aName in paragraphs of tNames		if aName is in tString then set errorSwitch to true	end repeat		if errorSwitch is true then		display dialog "Origin already set"		quit application "Terminal"	else		display dialog "Your repo has been set"		quit application "Terminal"	end if	end tell</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -68,15 +68,15 @@
 				<key>Class Name</key>
 				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>49CDEE61-30CC-4F6F-9899-9F85F7DAD6E3</string>
+				<string>9599FAB0-B3CF-495C-8860-018DC25429D0</string>
 				<key>Keywords</key>
 				<array>
 					<string>Run</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>F038E1DB-EFB7-4DB1-BDCF-664280475516</string>
+				<string>D21B85FB-199B-4BD6-A614-EB1B0D4C4178</string>
 				<key>UUID</key>
-				<string>CD923E7B-2FD7-498E-8A59-3383731C5330</string>
+				<string>25F0746F-CF85-43E6-AD2F-58F57A656590</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -102,10 +102,12 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>289.000000:247.000000</string>
+				<string>289.000000:315.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -115,19 +117,6 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict/>
-	<key>variables</key>
-	<array>
-		<dict>
-			<key>UUID</key>
-			<string>D4C5D95F-D55B-45C1-8D4B-DBFA6F73E5E2</string>
-			<key>identifier</key>
-			<string>com.apple.Automator.Variable.ShellScript</string>
-			<key>name</key>
-			<string>Shell Script</string>
-			<key>value</key>
-			<string>/bin/bash</string>
-		</dict>
-	</array>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>workflowTypeIdentifier</key>
